@@ -4,5 +4,5 @@ pip3 install Flask
 pip3 freeze
 pip list
 pip3 freeze > requirements.txt
-export FLASK_APP=hello.py
+export FLASK_APP=run.py
 flask run --port=5002

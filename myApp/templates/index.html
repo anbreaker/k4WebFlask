@@ -1,36 +1,19 @@
-{% extends 'base.html'%} 
-{%block title%} Indice {% endblock %} {%block content%}
+{% extends 'base.html'%} {%block title%} Indice {% endblock %} {%block content%}
 <table class="region_table">
     <tr>
         <th>Región</th>
         <th>Total Ventas</th>
-        <th>Total Beneficio</th>
+        <th>Total Beneficios</th>
     </tr>
+    {%for registro in registros%}
     <tr>
-        <td>Asia</td>
-        <td>13000000 €</td>
-        <td>1000000</td>
+        {%for campo in registro%}
+        <td>{{campo.region}}</td>
+        <td>{{campo.ingresos_totales}}</td>
+        <td>{{campo.beneficios_totales}}</td>
+        {%end for%}
     </tr>
-    <tr>
-        <td>Australia and Oceania</td>
-        <td>13000000 €</td>
-        <td>1000000</td>
-    </tr>
-    <tr>
-        <td>Central America and the Caribbean</td>
-        <td>13000000 €</td>
-        <td>1000000</td>
-    </tr>
-    <tr>
-        <td>Europe</td>
-        <td>13000000 €</td>
-        <td>1000000</td>
-    </tr>
-    <tr>
-        <td>Middle East and North Africa</td>
-        <td>13000000 €</td>
-        <td>1000000</td>
-    </tr>
+    {%end for%}
 </table>
 
 {% endblock %}

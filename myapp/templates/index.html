@@ -10,7 +10,7 @@ content %}
         {%for key, value in registros %}
         <tr>
             <td><input type="radio" name="region" value="{{key}}" /></td>
-            <td><a href="/detail/{{key}}">{{key}}</a></td>
+            <td><a href="/detail?region={{key}}">{{key}}</a></td>
             <td align="CENTER">{{'%.2f €'| format(value.ingresos_totales)}}</td>
             <td align="CENTER">
                 {{'%.2f €'| format(value.beneficios_totales)}}

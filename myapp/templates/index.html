@@ -1,20 +1,24 @@
-{% extends 'base.html' %}
-
-{% block title%} Indice {% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Indice {% endblock %} {% block
+content %}
+<form action="/detail">
     <table class="region_table">
         <tr>
             <th>Región</th>
             <th>Total Ventas</th>
             <th>Total Beneficio</th>
         </tr>
-        {% for key, data in registros %}
+        {%for key, value in registros %}
         <tr>
-            <td>{{key}}</td>
-            <td>{{"%.2f €" | format(data.ingresos_totales)}}</td>
-            <td>{{"%.2f €" | format(data.beneficios_totales)}}</td>
+            <td><input type="radio" name="region" value="{{key}}" /></td>
+            <td><a href="/detail/{{key}}">{{key}}</a></td>
+            <td align="CENTER">{{'%.2f €'| format(value.ingresos_totales)}}</td>
+            <td align="CENTER">
+                {{'%.2f €'| format(value.beneficios_totales)}}
+            </td>
         </tr>
         {% endfor %}
     </table>
+
+    <button type="submit">Enviar</button>
+</form>
 {% endblock %}

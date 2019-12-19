@@ -1,6 +1,7 @@
 py -m venv venv
 source venv/bin/activate
 pip3 install Flask
+pip install python-dotenv  #para liveServer
 pip3 freeze
 pip list
 pip3 freeze > requirements.txt

@@ -5,6 +5,7 @@ pip install python-dotenv  #para liveServer
 pip3 freeze
 pip list
 pip3 freeze > requirements.txt
+pip install -r requirements.txt
 export FLASK_APP=run.py
 flask run --port=5002
 deactivate 
